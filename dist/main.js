@@ -1,0 +1,1 @@
+window.onload=function(){let e={type:Phaser.AUTO,width:window.innerWidth*window.devicePixelRatio/2,height:window.innerHeight*window.devicePixelRatio/2.5,physics:{default:"arcade",arcade:{gravity:{y:0},debug:!1}},scene:[preloadGame,playGame]};new Phaser.Game(e)};
