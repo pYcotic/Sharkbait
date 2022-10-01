@@ -2,7 +2,7 @@
   "name": "sharkbait",
   "version": "1.0.0",
   "description": "Be there or be shark bait",
-  "main": "game.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
