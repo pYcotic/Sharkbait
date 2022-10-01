@@ -36,12 +36,12 @@ class playGame extends Phaser.Scene {
         this.left_wall.x = -10;
 
         // add the right_wall layer 
-        this.right_wall = this.add.tileSprite(game.config.width *3, game.config.height/2, 46, game.config.height, "right_wall");
-        this.right_wall.x = (game.config.width*3)-10;
+        this.right_wall = this.add.tileSprite(game.config.width *3, game.config.height/2, 46, game.config.height, "left_wall");
+        this.right_wall.x = (game.config.width*3)-15;
         this.right_wall.scaleX = -1;
 
         // add player
-        this.player = this.add.sprite(game.config.width * 1.5, game.config.height / 2, "player").setScale(3);
+        this.player = this.physics.add.sprite(game.config.width * 1.5, game.config.height / 2, "player").setScale(3);
 
         // create an animation for the player
         this.anims.create({
@@ -51,6 +51,8 @@ class playGame extends Phaser.Scene {
         repeat: -1
         });
         this.player.play("swim");
+        
+        this.physics.add.collider(this.player, this.ceiling);
 
         // allow key inputs to control the player
         this.cursors = this.input.keyboard.createCursorKeys();
@@ -61,19 +63,17 @@ class playGame extends Phaser.Scene {
 
         // making the camera follow the player
         this.myCam.startFollow(this.player);
-
     }
-
 
     update() {
 
         // move the player when the arrow keys are pressed
         if (this.cursors.left.isDown && this.player.x > 0) {
-          this.player.x -= 6;
+          this.player.x -= 60;
           this.player.scaleX = -3;
 
         } else if (this.cursors.right.isDown && this.player.x < game.config.width * 3) {
-            this.player.x += 6;
+            this.player.x += 60;
             this.player.scaleX = 3;
 
         }

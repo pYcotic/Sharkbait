@@ -11,7 +11,6 @@ class preloadGame extends Phaser.Scene{
         this.load.image('ground', 'assets/environment/platform-1.png');
         this.load.image('ceiling', 'assets/environment/ceiling.png');
         this.load.image('left_wall', 'assets/environment/left_wall.png');
-        this.load.image('right_wall', 'assets/environment/left_wall.png');
 
         this.load.spritesheet('player', 
             'assets/player/shark.png',

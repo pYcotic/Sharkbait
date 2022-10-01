@@ -2,141 +2,29 @@
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Shark-Bait</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
-    <script type="text/javascript" src="preloadGame.js"></script>
-    <script type="text/javascript" src="playGame.js"></script>
-    <script type="text/javascript" src="game.js"></script>
+    
     <style type="text/css">
         body {
-            margin: 0;
+            margin: 100;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Shark-bait</h1>
+        <h2>Does this show?</h2>
+        <script type="text/javascript" src="preloadGame.js"></script>
+        <script type="text/javascript" src="playGame.js"></script>
+        <script type="text/javascript" src="game.js"></script>
+    </div>
 
-<script type="text/javascript">
-/*
-    var config = {
-        type: Phaser.AUTO,
-        width: 800,
-        height: 600,
-        physics: {
-            default: 'arcade',
-            arcade: {
-                gravity: { y: 0 },
-                debug: false
-            }
-        },
-        scene: {
-            preload: preload,
-            create: create,
-            update: update
-        }
-    };
-
-    let player;
-    let platforms;
-
-    let game = new Phaser.Game(config);
-    
-
-
-    function preload ()
-    {
-        //background textures
-        this.load.image('background', 'assets/environment/background.png');
-        this.load.image('midground', 'assets/environment/midground.png');
-
-        // platforms
-        this.load.image('ground', 'assets/environment/platform-1.png');
-
-
-        this.load.spritesheet('player', 
-            'assets/player/shark.png',
-            { frameWidth: 28.9, frameHeight:17 }
-        );
-    }
-
-    function create ()
-    {
-
-        this.background = this.add.tileSprite(0, 0, game.config.width, game.config.height, "background");
-        // Set its pivot to the top left corner
-        this.background.setOrigin(0, 0);
-        // fixe it so it won't move when the camera moves.
-        // Instead we are moving its texture on the update
-        this.background.setScrollFactor(0);
-
-        // Add a second background layer. Repeat as in bg_1
-        this.midground = this.add.tileSprite(0, 0, game.config.width, game.config.height, "midground");
-        this.midground.setOrigin(0, 0);
-        this.midground.setScrollFactor(0);
-
-
-        // add the ground layer which is only 48 pixels tall
-        this.ground = this.add.tileSprite(0, 0, game.config.width, 80, "ground", 1);
-        this.ground.setOrigin(0, 0);
-        this.ground.setScrollFactor(0);
-        // sinc this tile is shorter I positioned it at the bottom of he screen
-        this.ground.y = 540;
-
-        
-        
-
-        // add player
-        this.player = this.add.sprite(game.config.width * 1.5, game.config.height / 2, "player").setScale(3);
-
-        // create an animation for the player
-        this.anims.create({
-        key: "swim",
-        frames: this.anims.generateFrameNumbers("player"),
-        frameRate: 2,
-        repeat: -1
-        });
-        this.player.play("swim");
-
-        // allow key inputs to control the player
-        this.cursors = this.input.keyboard.createCursorKeys();
-
-        // set workd bounds to allow camera to follow the player
-        this.myCam = this.cameras.main;
-        this.myCam.setBounds(0, 0, game.config.width * 3, game.config.height);
-
-        // making the camera follow the player
-        this.myCam.startFollow(this.player);
-
-        
-
-    }
-
-    function update ()
-    {
-        // move the player when the arrow keys are pressed
-        if (this.cursors.left.isDown && this.player.x > 0) {
-            this.player.x -= 3;
-            this.player.scaleX = -3;
-    
-        } else if (this.cursors.right.isDown && this.player.x < game.config.width * 3) {
-            this.player.x += 3;
-            this.player.scaleX = 3;
-    
-        }
-        if (this.cursors.up.isDown && this.player.y > 0) {
-            this.player.y -= 3;
-    
-        } else if (this.cursors.down.isDown && this.player.y < game.config.height) {
-            this.player.y += 3;
-    
-        }
-
-        // scroll the texture of the tilesprites proportionally to the camera scroll
-        this.background.tilePositionX = this.myCam.scrollX * .3;
-        this.midground.tilePositionX = this.myCam.scrollX * .6;
-        this.ground.tilePositionX = this.myCam.scrollX;
-    }
-*/
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
 
 </body>
 </html>

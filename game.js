@@ -2,8 +2,8 @@ var game;
 window.onload = function(){
   let gameConfig = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    width: (window.innerWidth * window.devicePixelRatio)/2,
+    height: (window.innerHeight * window.devicePixelRatio)/2.5,
     physics: {
         default: 'arcade',
         arcade: {
